@@ -1,13 +1,19 @@
 # template_based_http_client
 
-This is a simple Ruby script. 4* 5 It has a functionality of http client, but enpowers you with ability to do batch request execution based on json template.
+This is a simple Ruby script. 
 
-##Example
+It has a functionality of http client, but enpowers you with ability to do batch request execution based on json template.
 
-If you run in a console
+##How it works
 
-ruby execute_template_with_ids.rb config/ids.list.example config/json.template.example PUT example.com 
+If you run in a console:
 
-when script execute_template_with_ids.rb will get json.template.example and execute it as many times as quantity of strings in ids.list.example.
+```ruby execute_template_with_ids.rb config/ids.list.example config/json.template.example PUT example.com```
 
-More of that, it will replace string TEMPLATE_VARIABLE with string from ids.list.example, so every time request will send data about different user.
+1. script will take all user ids from ids.list.example
+2. one by one, it will execute json.template.example request, changing TEMPLATE_VARIABLE string inside template with user ids from list
+3. so you will send custom JSON request for each id from list
+
+##Use cases
+
+This little script is quite useful then you have brand new feature in your service and you want to test it on several users, not on all of them.
