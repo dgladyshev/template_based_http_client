@@ -2,7 +2,7 @@
 
 This is a simple Ruby script. 
 
-It has a functionality of http client, but enpowers you with ability to do batch request execution based on json template.
+It has a functionality of http client, but empowers you with ability to do batch request execution based on json template.
 
 ##How it works
 
@@ -12,7 +12,8 @@ If you run in a console:
 
 1. script will take all user ids from ids.list.example
 2. one by one, it will execute json.template.example request, changing TEMPLATE_VARIABLE string inside template with user ids from list
-3. so you will send custom JSON request for each id from list
+3. requests will go on url example.com with HTTP method PUT (all methods with unempty request body are supported)
+4. so you will send custom JSON request for each id from list
 
 ##Use cases
 
